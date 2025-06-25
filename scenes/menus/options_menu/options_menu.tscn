@@ -1,0 +1,124 @@
+[gd_scene load_steps=3 format=3 uid="uid://u4anvp0fpbvl"]
+
+[ext_resource type="PackedScene" uid="uid://yed5eix8vo80" path="res://scenes/menus/options_menu/input/input_button.tscn" id="1_0dyb4"]
+[ext_resource type="Script" uid="uid://ckbstb4b21yly" path="res://scenes/menus/options_menu/input/input.gd" id="1_vduk8"]
+
+[node name="options_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -474.0
+offset_top = -238.0
+offset_right = 481.0
+offset_bottom = 246.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer"]
+layout_mode = 2
+tab_alignment = 1
+current_tab = 2
+
+[node name="audio" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_tab_index = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/audio"]
+layout_mode = 2
+alignment = 2
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/TabContainer/audio/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/TabContainer/audio/HBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/TabContainer/audio/HBoxContainer"]
+layout_mode = 2
+text = "اسكات"
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/audio/HBoxContainer"]
+layout_mode = 2
+text = "الصوت الرئيسي: "
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/TabContainer/audio"]
+layout_mode = 2
+alignment = 2
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/TabContainer/audio/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/TabContainer/audio/HBoxContainer2"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/TabContainer/audio/HBoxContainer2"]
+layout_mode = 2
+text = "اسكات"
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/audio/HBoxContainer2"]
+layout_mode = 2
+text = "المسيقى: "
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/TabContainer/audio"]
+layout_mode = 2
+alignment = 2
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/TabContainer/audio/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/TabContainer/audio/HBoxContainer3"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/TabContainer/audio/HBoxContainer3"]
+layout_mode = 2
+text = "اسكات"
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/audio/HBoxContainer3"]
+layout_mode = 2
+text = "التاثيرات الصوتية: "
+
+[node name="game" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="input" type="PanelContainer" parent="VBoxContainer/TabContainer"]
+layout_mode = 2
+script = ExtResource("1_vduk8")
+metadata/_tab_index = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/input"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/input/MarginContainer"]
+clip_contents = false
+layout_mode = 2
+
+[node name="action list" type="VBoxContainer" parent="VBoxContainer/TabContainer/input/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="input button" parent="VBoxContainer/TabContainer/input/MarginContainer/ScrollContainer/action list" instance=ExtResource("1_0dyb4")]
+layout_mode = 2
+
+[node name="video" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
